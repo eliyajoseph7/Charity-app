@@ -39,4 +39,24 @@ def home_dashboard(request):
 @login_required(login_url='/admins/login')
 def user_profile(request, id):
     profile = User.objects.get(id=id)
-    return render(request, 'admins/components/profile.html', {'profile': profile})    
+    return render(request, 'admins/components/profile.html', {'profile': profile})
+
+@login_required(login_url='/admins/login')
+def update_profile(request, id):
+    if request.method == 'POST':
+        _fname = request.POST['fname']
+        _lname = request.POST['lname']
+        _username = request.POST['username']
+        _email = request.POST['email']
+        profile = User.objects.get(id=id)
+        profile.first_name = _fname
+        profile.last_name = _lname
+        profile.username = _username
+        profile.email = _email
+        profile.save()
+        return redirect('admins:user_profile', id)    
+
+
+def users_view(request):
+    users = User.objects.all()
+    return render(request, 'admins/components/user_management.html', {'users':users})        
