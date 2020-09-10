@@ -10,4 +10,6 @@ urlpatterns = [
     path('logout', v.logout_view, name='logout'),
     path('dashboard', v.home_dashboard, name='dashboard'),
     path('user_profile/<int:id>', v.user_profile, name='user_profile'),
+    path('update_profile/<int:id>', v.update_profile, name='update_profile'),
+    path('users', v.users_view, name='users'),
 ]
