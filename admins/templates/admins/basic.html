@@ -272,6 +272,12 @@
                             </li>
                         </ul>
                     </li>
+                    <li>
+                        <a href="{% url 'admins:users' %}">
+                            <i class="far fa-calendar"></i>
+                            <span>user management</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
             <!-- #Menu -->
@@ -502,16 +508,33 @@
     <!-- Plugins Js -->
     <script src="{% static 'admin/assets/js/app.min.js' %}"></script>
     <script src="{% static 'admin/assets/js/chart.min.js' %}"></script>
+    <script src="{% static 'admin/assets/js/table.min.js' %}"></script>
     <!-- Custom Js -->
     <script src="{% static 'admin/assets/js/admin.js' %}"></script>
     <script src="{% static 'admin/assets/js/pages/index.js' %}"></script>
     <script src="{% static 'admin/assets/js/pages/charts/jquery-knob.js' %}"></script>
     <script src="{% static 'admin/assets/js/pages/sparkline/sparkline-data.js' %}"></script>
     <script src="{% static 'admin/assets/js/pages/medias/carousel.js' %}"></script>
+    <script src="{% static 'admin/assets/js/bundles/export-tables/dataTables.buttons.min.js' %}"></script>
+    <script src="{% static 'admin/assets/js/bundles/export-tables/buttons.flash.min.js' %}"></script>
+    <script src="{% static 'admin/assets/js/bundles/export-tables/jszip.min.js' %}"></script>
+    <script src="{% static 'admin/assets/js/bundles/export-tables/pdfmake.min.js' %}"></script>
+    <script src="{% static 'admin/assets/js/bundles/export-tables/vfs_fonts.js' %}"></script>
+    <script src="{% static 'admin/assets/js/bundles/export-tables/buttons.html5.min.js' %}"></script>
+    <script src="{% static 'admin/assets/js/bundles/export-tables/buttons.print.min.js' %}"></script>
+    <script src="{% static 'admin/assets/js/pages/tables/jquery-datatable.js' %}"></script>
 
     <script>
         document.getElementById('logout').onclick = function() {
             document.getElementById('form').submit();
         }
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#passField').hide();
+            $('#pass').click(function() {
+                $('#passField').toggle();
+            });
+        });
     </script>
 </body>
