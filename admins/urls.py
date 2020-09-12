@@ -12,4 +12,6 @@ urlpatterns = [
     path('user_profile/<int:id>', v.user_profile, name='user_profile'),
     path('update_profile/<int:id>', v.update_profile, name='update_profile'),
     path('users', v.users_view, name='users'),
+    path('inbox', v.inbox_view, name='inbox'),
+    path('inbox/<slug:slug>', v.email_view, name='read_email'),
 ]
