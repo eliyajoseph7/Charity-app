@@ -3,6 +3,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login as auth_login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from hope.models import Contact
 
 # Create your views here.
 def login(request):
@@ -60,3 +61,16 @@ def update_profile(request, id):
 def users_view(request):
     users = User.objects.all()
     return render(request, 'admins/components/user_management.html', {'users':users})        
+
+
+def inbox_view(request):
+    contacts = Contact.objects.all().order_by('date')
+    count = Contact.objects.all().count()
+
+    return render(request, 'admins/components/inbox.html', {"contacts": contacts, "count": count})   
+
+
+def email_view(request, slug):
+    info = Contact.objects.get(slug=slug)
+
+    return render(request, 'admins/components/read_email.html', {'info': info})     
