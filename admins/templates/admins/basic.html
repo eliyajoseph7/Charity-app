@@ -11,6 +11,7 @@
     <link rel="icon" href="{% static 'admin/assets/images/favicon.ico' %}" type="image/x-icon">
     <!-- Plugins Core Css -->
     <link href="{% static 'admin/assets/css/app.min.css' %}" rel="stylesheet">
+    <link href="{% static 'admin/assets/css/form.min.css' %}" rel="stylesheet">
     <!-- Custom Css -->
     <link href="{% static 'admin/assets/css/style.css' %}" rel="stylesheet" />
     <!-- Theme style. You can choose a theme from css/themes instead of get all themes -->
@@ -262,7 +263,7 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="pages/email/inbox.html">Inbox</a>
+                                <a href="{% url 'admins:inbox' %}">Inbox</a>
                             </li>
                             <li>
                                 <a href="pages/email/compose.html">Compose</a>
@@ -509,6 +510,7 @@
     <script src="{% static 'admin/assets/js/app.min.js' %}"></script>
     <script src="{% static 'admin/assets/js/chart.min.js' %}"></script>
     <script src="{% static 'admin/assets/js/table.min.js' %}"></script>
+    <script src="{% static 'admin/assets/js/form.min.js' %}"></script>
     <!-- Custom Js -->
     <script src="{% static 'admin/assets/js/admin.js' %}"></script>
     <script src="{% static 'admin/assets/js/pages/index.js' %}"></script>
