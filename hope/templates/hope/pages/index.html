@@ -1,343 +1,264 @@
 {% extends 'hope/main/main.html' %} {% load static %} {% block content %}
 
-<section id="home" class="about-us">
+<!--==========================
+      About Us Section
+    ============================-->
+<section id="about">
     <div class="container">
-        <div class="about-us-content">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="single-about-us">
-                        <div class="about-us-txt">
-                            <h2>
-                                Explore the Beauty of the Beautiful World
 
-                            </h2>
-                            <div class="about-btn">
-                                <button class="about-view">
-                                    explore now
-                                </button>
-                            </div>
-                            <!--/.about-btn-->
-                        </div>
-                        <!--/.about-us-txt-->
-                    </div>
-                    <!--/.single-about-us-->
-                </div>
-                <!--/.col-->
-                <div class="col-sm-0">
-                    <div class="single-about-us">
+        <header class="section-header">
+            <h3>About Us</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </header>
 
+        <div class="row about-cols">
+
+            <div class="col-md-4 wow fadeInUp">
+                <div class="about-col">
+                    <div class="img">
+                        <a href="{% url 'hope:about' %}#mission">
+                            <img src="{% static 'assets/img/about-mission.jpg' %}" alt="" class="img-fluid">
+                            <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
+                        </a>
                     </div>
-                    <!--/.single-about-us-->
+                    <h2 class="title"><a href="{% url 'hope:about' %}#mission">Our Mission</a></h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
                 </div>
-                <!--/.col-->
             </div>
-            <!--/.row-->
+
+            <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="about-col">
+                    <div class="img">
+                        <a href="{% url 'hope:about' %}#plan">
+                            <img src="{% static 'assets/img/about-plan.jpg' %}" alt="" class="img-fluid">
+                            <div class="icon"><i class="ion-ios-list-outline"></i></div>
+                        </a>
+                    </div>
+                    <h2 class="title"><a href="{% url 'hope:about' %}#plan">Our Plan</a></h2>
+                    <p>
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="about-col">
+                    <div class="img">
+                        <a href="{% url 'hope:about' %}#vision">
+                            <img src="{% static 'assets/img/about-vision.jpg' %}" alt="" class="img-fluid">
+                            <div class="icon"><i class="ion-ios-eye-outline"></i></div>
+                        </a>
+                    </div>
+                    <h2 class="title"><a href="{% url 'hope:about' %}#vision">Our Vision</a></h2>
+                    <p>
+                        Nemo enim ipsam voluptatem quia voluptas sit aut odit aut fugit, sed quia magni dolores eos qui ratione voluptatem sequi nesciunt Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
+                    </p>
+                </div>
+            </div>
+
         </div>
-        <!--/.about-us-content-->
+
     </div>
-    <!--/.container-->
-
 </section>
+<!-- #about -->
 
-<!-- mission, virsion.. -->
+<!--==========================
+  Activities Section
+============================-->
+{% include "hope/pages/indexComponents/activities.html" %}
+<!-- #Activities -->
 
-<section class="travel-box">
+<!--==========================
+  Call To Action Section
+============================-->
+<section id="call-to-action" class="wow fadeIn">
+    <div class="container text-center">
+        <h3>Call To Action</h3>
+        <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <a class="cta-btn" href="#">Call To Action</a>
+    </div>
+</section>
+<!-- #call-to-action -->
+
+
+
+<!--==========================
+  Portfolio Section
+============================-->
+{% include "hope/pages/indexComponents/potfolio.html" %}
+<!-- #portfolio -->
+
+
+
+<!--==========================
+  Clients Section
+============================-->
+<section id="testimonials" class="section-bg wow fadeInUp">
     <div class="container">
+
+        <header class="section-header">
+            <h3>Testimonials</h3>
+        </header>
+
+        <div class="owl-carousel testimonials-carousel">
+
+            <div class="testimonial-item">
+                <img src="{% static 'assets/img/testimonial-1.jpg' %}" class="testimonial-img" alt="">
+                <h3>Saul Goodman</h3>
+                <h4>Ceo &amp; Founder</h4>
+                <p>
+                    <img src="{% static 'assets/img/quote-sign-left.png' %}" class="quote-sign-left" alt=""> Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh
+                    et. Maecen aliquam, risus at semper.
+                    <img src="{% static 'assets/img/quote-sign-right.png' %}" class="quote-sign-right" alt="">
+                </p>
+            </div>
+
+            <div class="testimonial-item">
+                <img src="{% static 'assets/img/testimonial-2.jpg' %}" class="testimonial-img" alt="">
+                <h3>Sara Wilsson</h3>
+                <h4>Designer</h4>
+                <p>
+                    <img src="{% static 'assets/img/quote-sign-left.png' %}" class="quote-sign-left" alt=""> Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua
+                    noster fugiat irure amet legam anim culpa.
+                    <img src="{% static 'assets/img/quote-sign-right.png' %}" class="quote-sign-right" alt="">
+                </p>
+            </div>
+
+            <div class="testimonial-item">
+                <img src="{% static 'assets/img/testimonial-3.jpg' %}" class="testimonial-img" alt="">
+                <h3>Jena Karlis</h3>
+                <h4>Store Owner</h4>
+                <p>
+                    <img src="{% static 'assets/img/quote-sign-left.png' %}" class="quote-sign-left" alt=""> Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet
+                    eram fore quis sint minim.
+                    <img src="{% static 'assets/img/quote-sign-right.png' %}" class="quote-sign-right" alt="">
+                </p>
+            </div>
+
+            <div class="testimonial-item">
+                <img src="{% static 'assets/img/testimonial-4.jpg' %}" class="testimonial-img" alt="">
+                <h3>Matt Brandon</h3>
+                <h4>Freelancer</h4>
+                <p>
+                    <img src="{% static 'assets/img/quote-sign-left.png' %}" class="quote-sign-left" alt=""> Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna
+                    sunt elit fore quem dolore labore illum veniam.
+                    <img src="{% static 'assets/img/quote-sign-right.png' %}" class="quote-sign-right" alt="">
+                </p>
+            </div>
+
+            <div class="testimonial-item">
+                <img src="{% static 'assets/img/testimonial-5.jpg' %}" class="testimonial-img" alt="">
+                <h3>John Larson</h3>
+                <h4>Entrepreneur</h4>
+                <p>
+                    <img src="{% static 'assets/img/quote-sign-left.png' %}" class="quote-sign-left" alt=""> Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum
+                    fugiat legam esse veniam culpa fore nisi cillum quid.
+                    <img src="{% static 'assets/img/quote-sign-right.png' %}" class="quote-sign-right" alt="">
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<!-- #testimonials -->
+
+<!--==========================
+  Team Section
+============================-->
+<section id="team">
+    <div class="container">
+        <div class="section-header wow fadeInUp">
+            <h3>Team</h3>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+        </div>
+
         <div class="row">
-            <div class="col-md-12">
-                <div class="single-travel-boxes">
-                    <div id="desc-tabs" class="desc-tabs">
 
-                        <ul class="nav nav-tabs" role="tablist">
-
-                            <li role="presentation" class="active">
-                                <a href="#mission" aria-controls="mission" role="tab" data-toggle="tab">
-                                    <i class="fa fa-tree"></i> Mission
-                                </a>
-                            </li>
-
-                            <li role="presentation">
-                                <a href="#vision" aria-controls="vision" role="tab" data-toggle="tab">
-                                    <i class="fa fa-building"></i> Vision
-                                </a>
-                            </li>
-
-                            <li role="presentation">
-                                <a href="#objectives" aria-controls="objectives" role="tab" data-toggle="tab">
-                                    <i class="fa fa-plane"></i> Objectives
-                                </a>
-                            </li>
-                        </ul>
-
-                        <!-- Tab panes -->
-                        <div class="tab-content">
-                            <!-- Mission -->
-                            <div role="tabpanel" class="tab-pane active fade in" id="mission">
-                                <div class="tab-para">
-
-                                    <div class="row">
-                                        <div class="col-lg-4 col-md-4 col-sm-12">
-                                            <div class="single-tab-select-box">
-
-                                                <h2>destination</h2>
-
-                                                <div class="">
-                                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto ex optio tempora id natus quis consequatur labore eum iste minima.</p>
-                                                </div>
-
-                                            </div>
-                                            <!--/.single-tab-select-box-->
-                                        </div>
-                                        <!--/.col-->
-
-                                        <div class="col-lg-8 col-md-3 col-sm-4">
-                                            <div class="single-tab-select-box">
-                                                <h2>check in</h2>
-                                                <div>
-                                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo ipsa omnis tempore enim, blanditiis aspernatur est. Commodi facilis quod obcaecati?</p>
-                                                </div>
-                                            </div>
-                                            <!--/.single-tab-select-box-->
-                                        </div>
-                                        <!--/.col-->
-
-                                    </div>
-                                    <!--/.row-->
-
-                                    <div class="row">
-                                        <div class="col-sm-5">
-                                            <div class="travel-budget">
-                                                <div class="row">
-
-                                                </div>
-                                                <!--/.row-->
-                                            </div>
-                                            <!--/.travel-budget-->
-                                        </div>
-                                        <!--/.col-->
-                                        <div class="clo-sm-7">
-                                            <div class="about-btn travel-mrt-0 pull-right">
-                                                <button class="about-view travel-btn">
-                                                    View More	
-                                                </button>
-                                                <!--/.travel-btn-->
-                                            </div>
-                                            <!--/.about-btn-->
-                                        </div>
-                                        <!--/.col-->
-
-                                    </div>
-                                    <!--/.row-->
-
-                                </div>
-                                <!--/.tab-para-->
-
+            <div class="col-lg-3 col-md-6 wow fadeInUp">
+                <div class="member">
+                    <img src="{% static 'assets/img/team-1.jpg' %}" class="img-fluid" alt="">
+                    <div class="member-info">
+                        <div class="member-info-content">
+                            <h4>Walter White</h4>
+                            <span>Chief Executive Officer</span>
+                            <div class="social">
+                                <a href=""><i class="fa fa-twitter"></i></a>
+                                <a href=""><i class="fa fa-facebook"></i></a>
+                                <a href=""><i class="fa fa-google-plus"></i></a>
+                                <a href=""><i class="fa fa-linkedin"></i></a>
                             </div>
-                            <!--/.tabpannel-->
-                            <!-- Vission -->
-                            <div role="tabpanel" class="tab-pane fade in" id="vision">
-                                <div class="tab-para">
-
-                                    <div class="row">
-                                        <div class="col-lg-4 col-md-4 col-sm-12">
-                                            <div class="single-tab-select-box">
-
-                                                <h2>destination</h2>
-
-                                                <div class="">
-                                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto ex optio tempora id natus quis consequatur labore eum iste minima.</p>
-                                                </div>
-
-                                            </div>
-                                            <!--/.single-tab-select-box-->
-                                        </div>
-                                        <!--/.col-->
-
-                                        <div class="col-lg-8 col-md-3 col-sm-4">
-                                            <div class="single-tab-select-box">
-                                                <h2>check in</h2>
-                                                <div>
-                                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo ipsa omnis tempore enim, blanditiis aspernatur est. Commodi facilis quod obcaecati?</p>
-                                                </div>
-                                            </div>
-                                            <!--/.single-tab-select-box-->
-                                        </div>
-                                        <!--/.col-->
-
-                                    </div>
-                                    <!--/.row-->
-
-                                    <div class="row">
-                                        <div class="col-sm-5"></div>
-                                        <!--/.col-->
-                                        <div class="clo-sm-7">
-                                            <div class="about-btn travel-mrt-0 pull-right">
-                                                <button class="about-view travel-btn">
-                                                    View More	
-                                                </button>
-                                                <!--/.travel-btn-->
-                                            </div>
-                                            <!--/.about-btn-->
-                                        </div>
-                                        <!--/.col-->
-
-                                    </div>
-                                    <!--/.row-->
-
-                                </div>
-                                <!--/.tab-para-->
-
-                            </div>
-                            <!--/.tabpannel-->
-
-                            <div role="tabpanel" class="tab-pane fade in" id="objectives">
-                                <div class="tab-para">
-
-                                    <div class="row">
-                                        <div class="col-lg-4 col-md-4 col-sm-12">
-                                            <div class="single-tab-select-box">
-
-                                                <h2>destination</h2>
-
-                                                <div class="">
-                                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto ex optio tempora id natus quis consequatur labore eum iste minima.</p>
-                                                </div>
-
-                                            </div>
-                                            <!--/.single-tab-select-box-->
-                                        </div>
-                                        <!--/.col-->
-
-                                        <div class="col-lg-8 col-md-3 col-sm-4">
-                                            <div class="single-tab-select-box">
-                                                <h2>check in</h2>
-                                                <div>
-                                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo ipsa omnis tempore enim, blanditiis aspernatur est. Commodi facilis quod obcaecati?</p>
-                                                </div>
-                                            </div>
-                                            <!--/.single-tab-select-box-->
-                                        </div>
-                                        <!--/.col-->
-
-                                    </div>
-                                    <!--/.row-->
-
-                                    <div class="row">
-                                        <div class="col-sm-5"></div>
-                                        <!--/.col-->
-                                        <div class="clo-sm-7">
-                                            <div class="about-btn travel-mrt-0 pull-right">
-                                                <button class="about-view travel-btn">
-                                                    View More	
-                                                </button>
-                                                <!--/.travel-btn-->
-                                            </div>
-                                            <!--/.about-btn-->
-                                        </div>
-                                        <!--/.col-->
-
-                                    </div>
-                                    <!--/.row-->
-
-                                </div>
-
-                            </div>
-                            <!--/.tabpannel-->
-
                         </div>
-                        <!--/.tab content-->
                     </div>
-                    <!--/.desc-tabs-->
                 </div>
-                <!--/.single-travel-box-->
             </div>
-            <!--/.col-->
-        </div>
-        <!--/.row-->
-    </div>
-    <!--/.container-->
 
-</section>
-<!-- end mission -->
-
-<!--service start-->
-<section id="service" class="service">
-    <div class="container">
-
-        <div class="service-counter text-center">
-
-            <div class="col-md-4 col-sm-4">
-                <div class="single-service-box">
-                    <div class="service-img">
-                        <img src="{% static 'assets/images/service/s1.png' %}" alt="service-icon" />
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="member">
+                    <img src="{% static 'assets/img/team-2.jpg' %}" class="img-fluid" alt="">
+                    <div class="member-info">
+                        <div class="member-info-content">
+                            <h4>Sarah Jhonson</h4>
+                            <span>Product Manager</span>
+                            <div class="social">
+                                <a href=""><i class="fa fa-twitter"></i></a>
+                                <a href=""><i class="fa fa-facebook"></i></a>
+                                <a href=""><i class="fa fa-google-plus"></i></a>
+                                <a href=""><i class="fa fa-linkedin"></i></a>
+                            </div>
+                        </div>
                     </div>
-                    <!--/.service-img-->
-                    <div class="service-content">
-                        <h2>
-                            <a href="#">
-                            amazing tour packages
-                            </a>
-                        </h2>
-                        <p>Duis aute irure dolor in velit esse cillum dolore eu fugiat nulla.</p>
-                    </div>
-                    <!--/.service-content-->
                 </div>
-                <!--/.single-service-box-->
             </div>
-            <!--/.col-->
 
-            <div class="col-md-4 col-sm-4">
-                <div class="single-service-box">
-                    <div class="service-img">
-                        <img src="{% static 'assets/images/service/s2.png' %}" alt="service-icon" />
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="member">
+                    <img src="{% static 'assets/img/team-3.jpg' %}" class="img-fluid" alt="">
+                    <div class="member-info">
+                        <div class="member-info-content">
+                            <h4>William Anderson</h4>
+                            <span>CTO</span>
+                            <div class="social">
+                                <a href=""><i class="fa fa-twitter"></i></a>
+                                <a href=""><i class="fa fa-facebook"></i></a>
+                                <a href=""><i class="fa fa-google-plus"></i></a>
+                                <a href=""><i class="fa fa-linkedin"></i></a>
+                            </div>
+                        </div>
                     </div>
-                    <!--/.service-img-->
-                    <div class="service-content">
-                        <h2>
-                            <a href="#">
-                                book top class hotel
-                            </a>
-                        </h2>
-                        <p>Duis aute irure dolor in velit esse cillum dolore eu fugiat nulla.</p>
-                    </div>
-                    <!--/.service-content-->
                 </div>
-                <!--/.single-service-box-->
             </div>
-            <!--/.col-->
 
-            <div class="col-md-4 col-sm-4">
-                <div class="single-service-box">
-                    <div class="statistics-img">
-                        <img src="{% static 'assets/images/service/s3.png' %}" alt="service-icon" />
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="member">
+                    <img src="{% static 'assets/img/team-4.jpg' %}" class="img-fluid" alt="">
+                    <div class="member-info">
+                        <div class="member-info-content">
+                            <h4>Amanda Jepson</h4>
+                            <span>Accountant</span>
+                            <div class="social">
+                                <a href=""><i class="fa fa-twitter"></i></a>
+                                <a href=""><i class="fa fa-facebook"></i></a>
+                                <a href=""><i class="fa fa-google-plus"></i></a>
+                                <a href=""><i class="fa fa-linkedin"></i></a>
+                            </div>
+                        </div>
                     </div>
-                    <!--/.service-img-->
-                    <div class="service-content">
-
-                        <h2>
-                            <a href="#">
-                                online flight booking
-                            </a>
-                        </h2>
-                        <p>Duis aute irure dolor in velit esse cillum dolore eu fugiat nulla.</p>
-                    </div>
-                    <!--/.service-content-->
                 </div>
-                <!--/.single-service-box-->
             </div>
-            <!--/.col-->
 
         </div>
-        <!--/.statistics-counter-->
+
     </div>
-    <!--/.container-->
-
 </section>
-<!--/.service-->
-<!--service end-->
+<!-- #team -->
 
+<!--==========================
+  Contact Section
+============================-->
+{% include "hope/pages/indexComponents/contact.html" %}
+<!-- #contact -->
 
-<!-- Team -->
-{% include 'hope/pages/indexComponents/team.html' %}
-<!-- contact -->
-{% include 'hope/pages/indexComponents/contact.html' %} {% endblock content %}
+{% endblock content %}
