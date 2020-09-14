@@ -1,8 +1,9 @@
-{% load static %}
+{% extends "hope/pages/blog/blog-base.html" %} {% block content %}
+
 <section id="portfolio" class="section-bg">
     <div class="container">
 
-        <header class="section-header">
+        <header class="section-header" id="title">
             <h3 class="section-title">Our Portfolio</h3>
         </header>
 
@@ -14,13 +15,12 @@
                     <li data-filter=".filter-prisons">Prisons</li>
                     <li data-filter=".filter-orphanage">Orphanage</li>
                     <li data-filter=".filter-drug_addiction">Drug Addiction</li>
-                    <li class="port"><a href="{% url 'hope:portfolios' %}#title">View all</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="row portfolio-container">
-            {% for portfolio in portfolios %} {% if portfolio.category == 'hospital' %}
+            {% for portfolio in portfolio %} {% if portfolio.category == 'hospital' %}
             <div class="col-lg-4 col-md-6 portfolio-item filter-hospital wow fadeInUp">
                 <div class="portfolio-wrap">
                     <figure>
@@ -86,3 +86,4 @@
 
     </div>
 </section>
+{% endblock content %}
