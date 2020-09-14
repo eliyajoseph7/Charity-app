@@ -29,3 +29,49 @@ class Contact(models.Model):
         if not self.slug:
             self.slug = self.get_unique_slug()
         super().save(*args, **kwargs)
+
+
+class Portfolio(models.Model):
+    HOSP    =  'hospital'
+    ORPH   =  'orphanage'
+    PRIS     =  'prisons'
+    DRU =  'drug_addiction'
+
+    CATEGORY_SELECT = [
+        (HOSP, 'Hospital'),
+        (ORPH, 'Orphanage'),
+        (PRIS, 'Prisons'),
+        (DRU, 'Drug addiction center')
+    ]
+    
+
+    title           =   models.CharField(max_length=225)
+    description     =   models.TextField()
+    category        =   models.CharField(choices=CATEGORY_SELECT, max_length=20)
+    date            =   models.DateField(auto_now_add=True)
+    img_url         =   models.URLField(max_length=2000)
+    slug            =   models.SlugField(max_length=140, unique=True, blank=True)
+
+
+    def __str__(self):
+        return self.title
+    
+    def get_unique_slug(self):
+        slug    =   slugify(self.title)
+        unigue_slug =   slug
+
+        num = 1
+        while portfolio.objects.filter(slug=unigue_slug).exists():
+            unigue_slug = '{}_{}'.format(slug, num)
+
+            num += 1
+
+        return unigue_slug
+
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = self.get_unique_slug()
+        super().save(*args, **kwargs)       
+
+        
