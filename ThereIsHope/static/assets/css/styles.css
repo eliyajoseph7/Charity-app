@@ -310,3 +310,9 @@ h2::after {
 .widget-tags ul li a {
     color: #fff;
 }
+
+.related img:hover {
+    opacity: 0.7;
+    transition: 0.3s;
+    transform: scale(1.01);
+}

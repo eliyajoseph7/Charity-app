@@ -989,6 +989,16 @@ body.mobile-nav-active #mobile-nav-toggle {
     transition: 0.3s;
 }
 
+#portfolio .portfolio-item img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.port a:hover {
+    color: #fff !important;
+}
+
 #portfolio .portfolio-item figure .link-preview,
 #portfolio .portfolio-item figure .link-details {
     position: absolute;
