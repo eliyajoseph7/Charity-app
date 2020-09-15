@@ -6,22 +6,7 @@
                 <h2>
                     <strong>Exportable</strong> Table</h2>
                 <ul class="header-dropdown m-r--5">
-                    <li class="dropdown">
-                        <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            <i class="material-icons">more_vert</i>
-                        </a>
-                        <ul class="dropdown-menu pull-right">
-                            <li>
-                                <a href="#" onClick="return false;">Action</a>
-                            </li>
-                            <li>
-                                <a href="#" onClick="return false;">Another action</a>
-                            </li>
-                            <li>
-                                <a href="#" onClick="return false;">Something else here</a>
-                            </li>
-                        </ul>
-                    </li>
+                    <button class="btn btn-primary">Add user</button>
                 </ul>
             </div>
             <div class="body">
@@ -46,10 +31,70 @@
                                 <td>{{user.username}}</td>
                                 <td>{{user.profile.gender}}</td>
                                 <td>
-                                    <a href="#" target="_blank" class="btn btn-primary">
+                                    <a data-toggle="modal" data-target="#mo{{user.id}}" class="btn btn-primary">
                                         <i class="fa fa-user-edit"></i>
                                     </a>
                                 </td>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                    <div class="modal fade" id="mo{{user.id}}" tabindex="-1" role="dialog" aria-labelledby="formModal" aria-hidden="true" style="display: none;">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="formModal">Update User</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">×</span>
+                                                    </button>
+                                                </div>
+                                                <form action="{% url 'admins:updateStaff' user.id %}" method="POST">
+                                                    {% csrf_token %}
+                                                    <div class="modal-body">
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <label for="fname">First Name</label>
+                                                                <div class="form-group">
+                                                                    <div class="form-line">
+                                                                        <input type="text" name="fname" id="fname" class="form-control" value="{{user.first_name}}">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <label for="lname">Last Name</label>
+                                                                <div class="form-group">
+                                                                    <div class="form-line">
+                                                                        <input type="text" name="lname" id="lname" class="form-control" value="{{user.last_name}}">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <label for="email_address1">Email Address</label>
+                                                        <div class="form-group">
+                                                            <div class="form-line">
+                                                                <input type="text" name="email" id="email_address1" class="form-control" value="{{user.email}}">
+                                                            </div>
+                                                        </div>
+                                                        <label for="username">Username</label>
+                                                        <div class="form-group">
+                                                            <div class="form-line">
+                                                                <input type="text" name="username" id="username" class="form-control" value="{{user.username}}">
+                                                            </div>
+                                                        </div>
+                                                        <!-- <label for="password">Password</label>
+                                                        <div class="form-group">
+                                                            <div class="form-line">
+                                                                <input type="password" id="password" class="form-control" value="">
+                                                            </div>
+                                                        </div> -->
+                                                        <br>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Cancel</button>
+                                                        <button type="submit" class="btn btn-info waves-effect">Update</button>
+                                                    </div>
+                                            </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
                             </tr>
                             {% endfor %}
                         </tbody>
