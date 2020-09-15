@@ -61,7 +61,7 @@ class Portfolio(models.Model):
         unigue_slug =   slug
 
         num = 1
-        while portfolio.objects.filter(slug=unigue_slug).exists():
+        while Portfolio.objects.filter(slug=unigue_slug).exists():
             unigue_slug = '{}_{}'.format(slug, num)
 
             num += 1
