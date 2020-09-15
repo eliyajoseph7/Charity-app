@@ -89,7 +89,7 @@ WSGI_APPLICATION = 'ThereIsHope.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'hope',
         'USER': 'postgres',
         'PASSWORD': '1956',
