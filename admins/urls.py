@@ -14,4 +14,5 @@ urlpatterns = [
     path('users', v.users_view, name='users'),
     path('inbox', v.inbox_view, name='inbox'),
     path('inbox/<slug:slug>', v.email_view, name='read_email'),
+    path('update-staff/<int:id>', v.update_staff, name='updateStaff'),
 ]
