@@ -1,0 +1,1 @@
+web: gunicorn ThereIsHope.wsgi --log-file -
