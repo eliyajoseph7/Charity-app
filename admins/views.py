@@ -59,7 +59,7 @@ def update_profile(request, id):
 
 
 def users_view(request):
-    users = User.objects.all()
+    users = User.objects.all().order_by('id')
     return render(request, 'admins/components/user_management.html', {'users':users})        
 
 
@@ -74,3 +74,18 @@ def email_view(request, slug):
     info = Contact.objects.get(slug=slug)
 
     return render(request, 'admins/components/read_email.html', {'info': info})     
+
+def update_staff(request, id):
+     if request.method == 'POST':
+        user = User.objects.get(id=id) 
+        _fname = request.POST['fname']
+        _lname = request.POST['lname']
+        _username = request.POST['username']
+        _email = request.POST['email']
+
+        user.fname = _fname
+        user.last_name = _lname
+        user.username = _username
+        user.email = _email
+        user.save()
+        return redirect('admins:users')   
