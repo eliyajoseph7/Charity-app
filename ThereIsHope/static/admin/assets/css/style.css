@@ -12980,7 +12980,6 @@ fieldset[disabled] .form-control {
     white-space: nowrap;
     position: relative;
     border-bottom: 1px solid #e9e9e9;
-    background: url("../images/user-img-background.jpg") no-repeat no-repeat;
     height: 135px
 }
 
@@ -18341,12 +18340,7 @@ tr.group:hover {
 }
 
 td.details-control {
-    background: url("../images/details_open.png") no-repeat center center;
     cursor: pointer
-}
-
-tr.shown td.details-control {
-    background: url("../images/details_close.png") no-repeat center center
 }
 
 .product-grid .social li a:after,
