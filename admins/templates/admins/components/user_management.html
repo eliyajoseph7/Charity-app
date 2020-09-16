@@ -4,7 +4,7 @@
         <div class="card">
             <div class="header">
                 <h2>
-                    <strong>Exportable</strong> Table</h2>
+                    <strong>System</strong> Users</h2>
                 <ul class="header-dropdown m-r--5">
                     <button class="btn btn-primary">Add user</button>
                 </ul>
@@ -72,10 +72,26 @@
                                                                 <input type="text" name="email" id="email_address1" class="form-control" value="{{user.email}}">
                                                             </div>
                                                         </div>
-                                                        <label for="username">Username</label>
-                                                        <div class="form-group">
-                                                            <div class="form-line">
-                                                                <input type="text" name="username" id="username" class="form-control" value="{{user.username}}">
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <label for="username">Username</label>
+                                                                <div class="form-group">
+                                                                    <div class="form-line">
+                                                                        <input type="text" name="username" id="username" class="form-control" value="{{user.username}}">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <label for="gender">Gender</label>
+                                                                <div class="form-group">
+                                                                    <div class="form-line">
+                                                                        <select type="text" name="gender" id="gender" class="form-control">
+                                                                            <option  value="{{user.profile.gender}}"> {{user.profile.gender}}</option>
+                                                                            <option value='F'>F</option>
+                                                                            <option value="M">M</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <!-- <label for="password">Password</label>

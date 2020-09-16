@@ -83,9 +83,12 @@ def update_staff(request, id):
         _username = request.POST['username']
         _email = request.POST['email']
 
-        user.fname = _fname
+        user.first_name = _fname
         user.last_name = _lname
         user.username = _username
         user.email = _email
         user.save()
+
+        user.profile.gender = request.POST['gender']
+        user.profile.save()
         return redirect('admins:users')   
