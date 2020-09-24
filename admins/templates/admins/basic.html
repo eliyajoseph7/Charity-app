@@ -17,6 +17,7 @@
     <!-- Theme style. You can choose a theme from css/themes instead of get all themes -->
     <link href="{% static 'admin/assets/css/styles/all-themes.css' %}" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
 </head>
 
@@ -279,6 +280,12 @@
                             <span>user management</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="{% url 'admins:portfolio' %}">
+                            <i class="far fa-calendar"></i>
+                            <span>Portfolio</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
             <!-- #Menu -->
@@ -527,6 +534,11 @@
     <script src="{% static 'admin/assets/js/bundles/export-tables/buttons.print.min.js' %}"></script>
     <script src="{% static 'admin/assets/js/pages/tables/jquery-datatable.js' %}"></script>
 
+    <!-- form to create a portfolio -->
+    <script src="{% static 'admin/assets/js/create-portfolio.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+
     <script>
         document.getElementById('logout').onclick = function() {
             document.getElementById('form').submit();
@@ -537,6 +549,10 @@
             $('#passField').hide();
             $('#pass').click(function() {
                 $('#passField').toggle();
+            });
+
+            $('.show-form').click(function() {
+                $('.create-form').toggle();
             });
         });
     </script>
