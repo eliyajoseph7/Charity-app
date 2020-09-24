@@ -8,8 +8,8 @@ def index(request):
     return render(request, 'hope/pages/index.html', {'portfolios': portfolios})
     
 def about_view(request):
-
-    return render(request, 'hope/pages/blog/about.html')    
+    portfolio = Portfolio.objects.all()
+    return render(request, 'hope/pages/blog/about.html', {'portfolio':portfolio})    
 
 def blog_view(request, slug):
     portfolio = Portfolio.objects.get(slug=slug)

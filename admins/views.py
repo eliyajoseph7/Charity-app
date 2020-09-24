@@ -3,7 +3,8 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login as auth_login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from hope.models import Contact
+from hope.models import Contact, Portfolio
+from django.http import HttpResponse
 
 # Create your views here.
 def login(request):
@@ -58,11 +59,13 @@ def update_profile(request, id):
         return redirect('admins:user_profile', id)    
 
 
+@login_required(login_url='admins/login')
 def users_view(request):
     users = User.objects.all().order_by('id')
     return render(request, 'admins/components/user_management.html', {'users':users})        
 
 
+@login_required(login_url='admins/login')
 def inbox_view(request):
     contacts = Contact.objects.all().order_by('date')
     count = Contact.objects.all().count()
@@ -70,6 +73,7 @@ def inbox_view(request):
     return render(request, 'admins/components/inbox.html', {"contacts": contacts, "count": count})   
 
 
+@login_required(login_url='admins/login')
 def email_view(request, slug):
     info = Contact.objects.get(slug=slug)
 
@@ -92,3 +96,46 @@ def update_staff(request, id):
         user.profile.gender = request.POST['gender']
         user.profile.save()
         return redirect('admins:users')   
+
+
+@login_required(login_url='admins/login')
+def portfolio_view(request):
+    portfolios = Portfolio.objects.all().order_by('-id')
+    return render(request, 'admins/components/portfolios.html', {'portfolios': portfolios})       
+
+
+def update_portfolio(request, slug):
+    if request.method == 'POST':
+        portfolio = Portfolio.objects.get(slug=slug)  
+
+        title = request.POST['title']
+        description = request.POST['description']
+        category    = request.POST['category']
+        image       = request.POST['img_url']
+
+        portfolio.title = title
+        portfolio.description = description   
+        portfolio.category = category   
+        portfolio.img_url = image 
+        portfolio.save()
+
+        return redirect('admins:portfolio')  
+
+
+def create_portfolio(request):
+    if request.method == 'POST':
+        title       = request.POST['title']
+        category    = request.POST['category']
+        description = request.POST['description']
+        img_url     = request.POST['img_url']
+
+        portfolio   = Portfolio(title=title, category=category, description=description, img_url=img_url)
+        portfolio.save()
+        return HttpResponse('yezaaa')
+
+
+def delete_portfolio(request, slug):
+    if request.method == 'POST':
+        Portfolio.objects.get(slug=slug).delete()
+
+        return redirect('admins:portfolio')
