@@ -25,7 +25,7 @@
                 <div class="portfolio-wrap">
                     <figure>
                         <img src="{{ portfolio.img_url }}#{{portfolio.id}}" class="img-fluid" alt="">
-                        <a href="{{ portfolio.img_url }}" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
+                        <a href="{{ portfolio.img_url }}" data-lightbox="portfolio" data-title="{{ portfolio.title }}" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
                         <a href="{% url 'hope:view' portfolio.slug %}#{{portfolio.id}}" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                     </figure>
 
