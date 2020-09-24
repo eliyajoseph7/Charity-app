@@ -15,4 +15,8 @@ urlpatterns = [
     path('inbox', v.inbox_view, name='inbox'),
     path('inbox/<slug:slug>', v.email_view, name='read_email'),
     path('update-staff/<int:id>', v.update_staff, name='updateStaff'),
+    path('portfolio', v.portfolio_view, name='portfolio'),
+    path('portfolio-update/<slug:slug>', v.update_portfolio, name='updatePortfolio'),
+    path('createPortfolio', v.create_portfolio, name='createPortfolio'),
+    path('deletePortfolio/<slug:slug>', v.delete_portfolio, name='deletePortfolio'),
 ]
