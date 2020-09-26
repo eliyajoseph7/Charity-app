@@ -5,8 +5,12 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from hope.models import Contact, Portfolio
 from django.http import HttpResponse
+from .decorators import unauthenticated_user, allowed_users
+from django.contrib.auth.hashers import make_password
+import json
 
 # Create your views here.
+@unauthenticated_user
 def login(request):
     _message = 'Please sign in'
     if request.method == 'POST':
@@ -46,23 +50,29 @@ def user_profile(request, id):
 @login_required(login_url='/admins/login')
 def update_profile(request, id):
     if request.method == 'POST':
-        _fname = request.POST['fname']
-        _lname = request.POST['lname']
+        _fname = request.POST['first_name']
+        _lname = request.POST['last_name']
         _username = request.POST['username']
         _email = request.POST['email']
+
         profile = User.objects.get(id=id)
         profile.first_name = _fname
         profile.last_name = _lname
         profile.username = _username
         profile.email = _email
         profile.save()
+
+        profile.profile.gender = request.POST['gender']
+        profile.profile.save()
         return redirect('admins:user_profile', id)    
 
 
 @login_required(login_url='admins/login')
+@allowed_users(allowed_roles=['admin'])
 def users_view(request):
     users = User.objects.all().order_by('id')
-    return render(request, 'admins/components/user_management.html', {'users':users})        
+    context = {'users':users}
+    return render(request, 'admins/components/user_management.html', context)        
 
 
 @login_required(login_url='admins/login')
@@ -139,3 +149,37 @@ def delete_portfolio(request, slug):
         Portfolio.objects.get(slug=slug).delete()
 
         return redirect('admins:portfolio')
+
+
+# Update password 
+def update_password(request, id):
+    user = User.objects.get(id=id)
+    usr = User.objects.filter(id=id)
+    if request.method == 'POST':
+        current = request.POST['currentPass']
+        newPassword = request.POST['password']
+        newPasswordConf = request.POST['passwordConf']
+
+        check = user.check_password(current)
+
+        if(check is False):
+            return HttpResponse(json.dumps({'mismatch': 'current password is incorrect'}),
+                        content_type="application/json"
+                        )
+        else:
+            if(len(newPassword) < 8):
+                    return HttpResponse(json.dumps({'passError': 'password should contain atleast 8 characters'}),
+                            content_type="application/json"
+                            )
+            else:
+                if(newPassword != newPasswordConf):
+                    return HttpResponse(json.dumps({'confError': 'passwords do not match'}),
+                                content_type="application/json"
+                                )
+                
+                else:
+                    password=make_password(newPassword,hasher='default')
+                    usr.update(password=password)    
+                    return HttpResponse(json.dumps({'success': 'passwords updated successfully'}),
+                                content_type="application/json"
+                                )    
