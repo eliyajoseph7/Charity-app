@@ -19,4 +19,7 @@ urlpatterns = [
     path('portfolio-update/<slug:slug>', v.update_portfolio, name='updatePortfolio'),
     path('createPortfolio', v.create_portfolio, name='createPortfolio'),
     path('deletePortfolio/<slug:slug>', v.delete_portfolio, name='deletePortfolio'),
+
+    # updating password
+    path('user_profile/updatePassword/<int:id>', v.update_password, name='updatePassword'),
 ]
