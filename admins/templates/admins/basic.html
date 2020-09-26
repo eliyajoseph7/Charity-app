@@ -19,6 +19,16 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.5/css/responsive.bootstrap4.min.css">
+
+    <style>
+        .err {
+            border: 2px solid red !important;
+        }
+    </style>
 </head>
 
 <body class="light">
@@ -237,7 +247,7 @@
                         </div>
                         <div class="profile-usertitle">
                             <div class="sidebar-userpic-name"> {{request.user}} </div>
-                            <div class="profile-usertitle-job ">Manager </div>
+                            <div class="profile-usertitle-job ">{{request.user.profile.position}} </div>
                         </div>
                     </li>
                     <li class="active">
@@ -274,12 +284,14 @@
                             </li>
                         </ul>
                     </li>
+                    {% if request.user.is_staff %}
                     <li>
                         <a href="{% url 'admins:users' %}">
                             <i class="far fa-calendar"></i>
                             <span>user management</span>
                         </a>
                     </li>
+                    {% endif %}
                     <li>
                         <a href="{% url 'admins:portfolio' %}">
                             <i class="far fa-calendar"></i>
@@ -492,8 +504,8 @@
         </aside>
         <!-- #END# Right Sidebar -->
     </div>
-    <section class="content">
-        <div class="container-fluid">
+    <section class="content bg-light">
+        <div class="container-fluid pt-2">
             <!-- <div class="block-header">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -525,6 +537,7 @@
     <script src="{% static 'admin/assets/js/pages/charts/jquery-knob.js' %}"></script>
     <script src="{% static 'admin/assets/js/pages/sparkline/sparkline-data.js' %}"></script>
     <script src="{% static 'admin/assets/js/pages/medias/carousel.js' %}"></script>
+
     <script src="{% static 'admin/assets/js/bundles/export-tables/dataTables.buttons.min.js' %}"></script>
     <script src="{% static 'admin/assets/js/bundles/export-tables/buttons.flash.min.js' %}"></script>
     <script src="{% static 'admin/assets/js/bundles/export-tables/jszip.min.js' %}"></script>
@@ -534,8 +547,12 @@
     <script src="{% static 'admin/assets/js/bundles/export-tables/buttons.print.min.js' %}"></script>
     <script src="{% static 'admin/assets/js/pages/tables/jquery-datatable.js' %}"></script>
 
+    <script src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.5/js/responsive.bootstrap4.min.js"></script>
+
     <!-- form to create a portfolio -->
     <script src="{% static 'admin/assets/js/create-portfolio.js' %}"></script>
+    <script src="{% static 'admin/assets/js/change-password.js' %}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 
 

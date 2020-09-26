@@ -6,12 +6,12 @@
                 <h2>
                     <strong>System</strong> Users</h2>
                 <ul class="header-dropdown m-r--5">
-                    <button class="btn btn-primary">Add user</button>
+                    <!-- <button class="btn btn-primary">Add user</button> -->
                 </ul>
             </div>
             <div class="body">
-                <div class="table-responsive">
-                    <table id="tableExport" class="display table table-hover table-checkable order-column m-t-20 width-per-100">
+                <div class="table-re sponsive">
+                    <table id="tableExport" class="display table table-hover table-checkable order-column m-t-20 width-per-100 wrap responsive">
                         <thead>
                             <tr>
                                 <th>First Name</th>
@@ -19,6 +19,7 @@
                                 <th>Email</th>
                                 <th>Username</th>
                                 <th>Gender</th>
+                                <th>Position</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -30,6 +31,7 @@
                                 <td>{{user.email}}</td>
                                 <td>{{user.username}}</td>
                                 <td>{{user.profile.gender}}</td>
+                                <td>{{user.profile.position}}</td>
                                 <td>
                                     <a data-toggle="modal" data-target="#mo{{user.id}}" class="btn btn-primary">
                                         <i class="fa fa-user-edit"></i>
@@ -121,6 +123,7 @@
                                 <th>Email</th>
                                 <th>Username</th>
                                 <th>Gender</th>
+                                <th>Position</th>
                                 <th>Action</th>
                             </tr>
                         </tfoot>
