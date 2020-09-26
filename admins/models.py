@@ -12,9 +12,24 @@ class Profile(models.Model):
         (MALE, 'Male'),
         (FEMALE, 'Female')
     ]
-    user    = models.OneToOneField(User, on_delete=models.CASCADE)
-    gender  = models.CharField(max_length=2, choices=USER_GENDER, default=MALE)
-    date    = models.DateField(auto_now_add=True)
+
+    CHAIRPERSON         = 'Chairperson'
+    VICE_CHAIRPERSON    = 'Vice Chairperson'
+    SECRETARY           = 'Secretary'
+    VICESECRETARY       = 'Vice Secretary'
+    ITDIRECTOR          = 'IT Director'
+
+    USER_POSITION = [
+        (CHAIRPERSON, 'Chairperson'),
+        (VICE_CHAIRPERSON, 'Vice Chairperson'),
+        (SECRETARY, 'Secretary'),
+        (VICESECRETARY, 'Vice Secretary'),
+        (ITDIRECTOR, 'IT Director')
+    ]
+    user        = models.OneToOneField(User, on_delete=models.CASCADE)
+    gender      = models.CharField(max_length=2, choices=USER_GENDER, default=MALE)
+    position    = models.CharField(max_length=225, choices=USER_POSITION, blank=True)
+    date        = models.DateField(auto_now_add=True)
 
     def __str__(self):
         return self.user.username
