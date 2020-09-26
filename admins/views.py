@@ -141,7 +141,7 @@ def create_portfolio(request):
 
         portfolio   = Portfolio(title=title, category=category, description=description, img_url=img_url)
         portfolio.save()
-        return HttpResponse('yezaaa')
+        return HttpResponse('portfolio created successfully')
 
 
 def delete_portfolio(request, slug):
