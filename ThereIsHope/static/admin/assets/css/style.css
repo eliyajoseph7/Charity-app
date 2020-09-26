@@ -12197,20 +12197,33 @@ label {
 }
 
 .form-group .form-control {
+    display: block;
     width: 100%;
-    border: 0;
-    box-shadow: none;
-    border-bottom: 1px solid #9e9e9e;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    -ms-border-radius: 0;
-    border-radius: 0;
-    padding-left: 0
+    /* height: calc(1.5em + 0.75rem + 2px); */
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    -webkit-transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out
 }
 
 .form-group input.form-control {
+    display: block;
+    height: 23px;
     margin: 0;
-    font-size: 13px
+    padding: .375rem .1rem;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    font-size: 1rem;
 }
 
 .form-group .help-info {
@@ -15740,7 +15753,11 @@ nav.navbar {
 }
 
 .alert-dismissible .close {
-    text-indent: 0
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: .75rem 1.25rem;
+    color: inherit
 }
 
 .alert.alert-dismissible {
@@ -18808,7 +18825,7 @@ table.shoping-cart-table .text-price {
 }
 
 .alert-success {
-    background-color: rgba(24, 206, 15, 0.8)
+    background-color: #155724;
 }
 
 .alert-info {
@@ -18816,11 +18833,11 @@ table.shoping-cart-table .text-price {
 }
 
 .alert-warning {
-    background-color: rgba(255, 178, 54, 0.8)
+    background-color: #533f03;
 }
 
 .alert-danger {
-    background-color: rgba(255, 54, 54, 0.8)
+    background-color: #d309098f;
 }
 
 .alert-dismissible .close {
