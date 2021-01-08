@@ -19,8 +19,8 @@
             <div class="col-md-4 wow fadeInUp">
                 <div class="about-col">
                     <div class="img">
-                        <a href="{% url 'hope:about' %}#mission">
-                            <img src="{% static 'assets/img/about-mission.jpg' %}" alt="" class="img-fluid">
+                        <a href="{% url 'hope:about' %}#mission" class="h-100">
+                            <img src="{% static 'assets/img/mission.jpg' %}" alt="" class="w-100 h-100">
                             <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
                         </a>
                     </div>
@@ -34,8 +34,8 @@
             <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="about-col">
                     <div class="img">
-                        <a href="{% url 'hope:about' %}#plan">
-                            <img src="{% static 'assets/img/about-plan.jpg' %}" alt="" class="img-fluid">
+                        <a href="{% url 'hope:about' %}#plan" class="h-100">
+                            <img src="{% static 'assets/img/plan.jpeg' %}" alt="" class="w-100 h-100">
                             <div class="icon"><i class="ion-ios-list-outline"></i></div>
                         </a>
                     </div>
@@ -49,8 +49,8 @@
             <div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
                 <div class="about-col">
                     <div class="img">
-                        <a href="{% url 'hope:about' %}#vision">
-                            <img src="{% static 'assets/img/about-vision.jpg' %}" alt="" class="img-fluid">
+                        <a href="{% url 'hope:about' %}#vision" class="h-100">
+                            <img src="{% static 'assets/img/vision.jpg' %}" alt="" class="w-100 h-100">
                             <div class="icon"><i class="ion-ios-eye-outline"></i></div>
                         </a>
                     </div>
@@ -77,10 +77,17 @@
   Call To Action Section
 ============================-->
 <section id="call-to-action" class="wow fadeIn">
-    <div class="container text-center">
-        <h3>Call To Action</h3>
-        <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <a class="cta-btn" href="#">Call To Action</a>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="container text-center">
+                <h3>Call To Action</h3>
+                <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <a class="cta-btn" href="#">Call To Action</a>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/-JWFXgvXRlU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
     </div>
 </section>
 <!-- #call-to-action -->
@@ -98,7 +105,7 @@
 <!--==========================
   Clients Section
 ============================-->
-<section id="testimonials" class="section-bg wow fadeInUp">
+<!-- <section id="testimonials" class="section-bg wow fadeInUp">
     <div class="container">
 
         <header class="section-header">
@@ -165,91 +172,100 @@
         </div>
 
     </div>
-</section>
+</section> -->
 <!-- #testimonials -->
 
 <!--==========================
   Team Section
 ============================-->
-<section id="team">
+<section id="team" class="wow fadeInUp">
     <div class="container">
         <div class="section-header wow fadeInUp">
             <h3>Team</h3>
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+            <p>ThereIsHope top management team</p>
         </div>
 
-        <div class="row">
-
-            <div class="col-lg-3 col-md-6 wow fadeInUp">
-                <div class="member">
-                    <img src="{% static 'assets/img/team-1.jpg' %}" class="img-fluid" alt="">
-                    <div class="member-info">
-                        <div class="member-info-content">
-                            <h4>Walter White</h4>
-                            <span>Chief Executive Officer</span>
-                            <div class="social">
-                                <a href=""><i class="fa fa-twitter"></i></a>
-                                <a href=""><i class="fa fa-facebook"></i></a>
-                                <a href=""><i class="fa fa-google-plus"></i></a>
-                                <a href=""><i class="fa fa-linkedin"></i></a>
+        <div class="owl-carousel testimonials-carousel">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 wow fadeInUp tm">
+                    <div class="member h-100">
+                        <img src="{% static 'assets/img/victor.jpg' %}" class="w-100 h-100" alt="">
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4>Victor Jumanne Joshua </h4>
+                                <span>Chair Person</span>
+                                <!-- <div class="social">
+                                    <a href=""><i class="fa fa-twitter"></i></a>
+                                    <a href=""><i class="fa fa-facebook"></i></a>
+                                    <a href=""><i class="fa fa-google-plus"></i></a>
+                                    <a href=""><i class="fa fa-linkedin"></i></a>
+                                </div> -->
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp tm" data-wow-delay="0.1s">
+                    <div class="member">
+                        <img src="{% static 'assets/img/venture.jpg' %}" class="w-100 h-100" alt="">
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4>Liberatus Boniventure </h4>
+                                <span>Deputy Chairperson</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp tm" data-wow-delay="0.2s">
+                    <div class="member">
+                        <img src="{% static 'assets/img/paul.jpg' %}" class="w-100 h-100" alt="">
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4>Nyang'oro Paul Mahamba </h4>
+                                <span>Secretary</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp tm" data-wow-delay="0.3s">
+                    <div class="member">
+                        <img src="{% static 'assets/img/frida.jpg' %}" class="w-100 h-100" alt="">
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4>Geofrida Joseph Oisso</h4>
+                                <span>Deputy Secretary</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="member">
-                    <img src="{% static 'assets/img/team-2.jpg' %}" class="img-fluid" alt="">
-                    <div class="member-info">
-                        <div class="member-info-content">
-                            <h4>Sarah Jhonson</h4>
-                            <span>Product Manager</span>
-                            <div class="social">
-                                <a href=""><i class="fa fa-twitter"></i></a>
-                                <a href=""><i class="fa fa-facebook"></i></a>
-                                <a href=""><i class="fa fa-google-plus"></i></a>
-                                <a href=""><i class="fa fa-linkedin"></i></a>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 wow fadeInUp tm" data-wow-delay="0.3s">
+                    <div class="member">
+                        <img src="{% static 'assets/img/otieno.jpg' %}" class="w-100 h-100" alt="">
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4>Geoffrey Otieno</h4>
+                                <span>Treasurer</span>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-                <div class="member">
-                    <img src="{% static 'assets/img/team-3.jpg' %}" class="img-fluid" alt="">
-                    <div class="member-info">
-                        <div class="member-info-content">
-                            <h4>William Anderson</h4>
-                            <span>CTO</span>
-                            <div class="social">
-                                <a href=""><i class="fa fa-twitter"></i></a>
-                                <a href=""><i class="fa fa-facebook"></i></a>
-                                <a href=""><i class="fa fa-google-plus"></i></a>
-                                <a href=""><i class="fa fa-linkedin"></i></a>
+                <div class="col-lg-3 col-md-6 wow fadeInUp tm" data-wow-delay="0.3s">
+                    <div class="member">
+                        <img src="{% static 'assets/img/listen.jpg' %}" class="w-100 h-100" alt="">
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4>Godlisten Suruwale</h4>
+                                <span>Communication Director</span>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="member">
-                    <img src="{% static 'assets/img/team-4.jpg' %}" class="img-fluid" alt="">
-                    <div class="member-info">
-                        <div class="member-info-content">
-                            <h4>Amanda Jepson</h4>
-                            <span>Accountant</span>
-                            <div class="social">
-                                <a href=""><i class="fa fa-twitter"></i></a>
-                                <a href=""><i class="fa fa-facebook"></i></a>
-                                <a href=""><i class="fa fa-google-plus"></i></a>
-                                <a href=""><i class="fa fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
 
         </div>
@@ -263,5 +279,28 @@
 ============================-->
 {% include "hope/pages/indexComponents/contact.html" %}
 <!-- #contact -->
+
+<style>
+    .tm {
+        height: 300px;
+        margin-top: 5px;
+    }
+    
+    .member {
+        height: 100%;
+    }
+    
+    .member img {
+        object-fit: cover;
+    }
+    
+    .img {
+        height: 200px;
+    }
+    
+    .img a img {
+        object-fit: cover;
+    }
+</style>
 
 {% endblock content %}

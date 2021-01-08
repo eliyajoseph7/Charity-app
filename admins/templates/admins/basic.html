@@ -262,7 +262,7 @@
                         </ul> -->
                     </li>
                     <li>
-                        <a href="pages/apps/calendar.html">
+                        <a href="{% url 'admins:events' %}">
                             <i class="far fa-calendar"></i>
                             <span>Events</span>
                         </a>
@@ -534,6 +534,7 @@
     <!-- Custom Js -->
     <script src="{% static 'admin/assets/js/admin.js' %}"></script>
     <script src="{% static 'admin/assets/js/pages/index.js' %}"></script>
+    <script src="{% static 'admin/assets/js/pages/charts/chartjs.js' %}"></script>
     <script src="{% static 'admin/assets/js/pages/charts/jquery-knob.js' %}"></script>
     <script src="{% static 'admin/assets/js/pages/sparkline/sparkline-data.js' %}"></script>
     <script src="{% static 'admin/assets/js/pages/medias/carousel.js' %}"></script>
@@ -563,6 +564,7 @@
     </script>
     <script>
         $(document).ready(function() {
+            // $('#tableExport2').DataTable();
             $('#passField').hide();
             $('#pass').click(function() {
                 $('#passField').toggle();

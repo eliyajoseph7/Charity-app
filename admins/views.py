@@ -7,6 +7,7 @@ from hope.models import Contact, Portfolio
 from django.http import HttpResponse
 from .decorators import unauthenticated_user, allowed_users
 from django.contrib.auth.hashers import make_password
+from .models import Events
 import json
 
 # Create your views here.
@@ -183,3 +184,11 @@ def update_password(request, id):
                     return HttpResponse(json.dumps({'success': 'passwords updated successfully'}),
                                 content_type="application/json"
                                 )    
+
+
+
+def events_view(request):
+
+    events  =   Events.objects.all()
+    context = {'events': events}
+    return render(request, 'admins/components/events.html', context)                                

@@ -32,6 +32,18 @@ $(function () {
 			'copy', 'csv', 'excel', 'pdf', 'print'
 		]
 	});
+	$('#tableExport2').DataTable({
+		dom: 'Bfrtip',
+		buttons: [
+			'copy', 'csv', 'excel', 'pdf', 'print'
+		]
+	});
+	$('#tableExport3').DataTable({
+		dom: 'Bfrtip',
+		buttons: [
+			'copy', 'csv', 'excel', 'pdf', 'print'
+		]
+	});
 
 
 	//Exportable table

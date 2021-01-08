@@ -1,3 +1,113 @@
 {% extends "admins/basic.html" %} {% block content %} {{request.user.id}}
-<p>This is index</p>
+<div class="row">
+    <div class="col-lg-3 col-sm-6">
+        <div class="counter-box text-center white">
+            <div class="text font-17 m-b-5">Total Donations</div>
+            <h3 class="m-b-10">$758
+                <i class="material-icons col-green">trending_up</i>
+            </h3>
+            <div class="icon">
+                <div class="chart chart-bar"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+        <div class="counter-box text-center white">
+            <div class="text font-17 m-b-5">Total Events</div>
+            <h3 class="m-b-10">1025
+                <i class="material-icons col-red">trending_down</i>
+            </h3>
+            <div class="icon">
+                <span class="chart chart-line"></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+        <div class="counter-box text-center white">
+            <div class="text font-17 m-b-5">Finished Events</div>
+            <h3 class="m-b-10">956
+                <i class="material-icons col-green">trending_up</i>
+            </h3>
+            <div class="icon">
+                <div class="chart chart-pie"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+        <div class="counter-box text-center white">
+            <div class="text font-17 m-b-5">Coming Events</div>
+            <h3 class="m-b-10">214
+                <i class="material-icons col-red">trending_down</i>
+            </h3>
+            <div class="icon">
+                <div class="chart" id="liveChart">Loading..</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="header">
+                <h2>
+                    <strong>Line</strong> Chart</h2>
+                <ul class="header-dropdown m-r--5">
+                    <li class="dropdown">
+                        <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="material-icons">more_vert</i>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                            <li>
+                                <a href="#" onClick="return false;">Action</a>
+                            </li>
+                            <li>
+                                <a href="#" onClick="return false;">Another action</a>
+                            </li>
+                            <li>
+                                <a href="#" onClick="return false;">Something else here</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="body">
+                <div class="recent-report__chart">
+                    <canvas id="line-chart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="header">
+                <h2>
+                    <strong>Line</strong> Chart</h2>
+                <ul class="header-dropdown m-r--5">
+                    <li class="dropdown">
+                        <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="material-icons">more_vert</i>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                            <li>
+                                <a href="#" onClick="return false;">Action</a>
+                            </li>
+                            <li>
+                                <a href="#" onClick="return false;">Another action</a>
+                            </li>
+                            <li>
+                                <a href="#" onClick="return false;">Something else here</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="body">
+                <div class="recent-report__chart">
+                    <canvas id="lineChartFill"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}

@@ -22,4 +22,7 @@ urlpatterns = [
 
     # updating password
     path('user_profile/updatePassword/<int:id>', v.update_password, name='updatePassword'),
+
+    # events
+    path('events', v.events_view, name='events')
 ]

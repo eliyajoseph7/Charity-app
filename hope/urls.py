@@ -12,4 +12,5 @@ urlpatterns = [
     path('contactMessage', v.contact_view, name='message'),
     path('portfolios', v.portfolio_view, name='portfolios'),
     path('about-me', v.about_me, name='about_me'),
+    path('donate', v.donation_view, name='donation'),
 ]
