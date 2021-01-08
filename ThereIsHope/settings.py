@@ -36,7 +36,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'zuy^*i*66_q&yuls(n-f7vg8cavx_@
 # DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['stormy-fjord-58029.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['thereishope.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
