@@ -1,0 +1,93 @@
+{% extends "hope/pages/blog/blog-base.html" %} {% load static %} {% block content %}
+<section class="pt-5" id="activities">
+    <div class="bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 text-justify">
+                    <div class="col-md-12 pt-lg-5" id="first">
+
+                        <h2 class="mb-3">Our Activities</h2>
+                        <div id="1">
+                            <h4>1. VISITING THE ORPHAGE CENTERS</h4>
+                            <p>The intention of visiting these centers is to relieve sufferings and necessities of orphans by supplying their needs but also to socialize with them in order to provide psychological support. Providing a session of encouragement
+                                from the Word of God, accompanied with prayers will help in restoring back the hope to their lives</p>
+                        </div>
+
+                        <div id="2">
+                            <h4>2. COMFORTING PATIENTS FROM DIFFERENT HOSIPITALS</h4>
+                            <p>Nevertheless, that we are providing physical needs to those who are sick, but a tender visit and comfort in their chronic illness accompanied with promises from the Word of God and sweet words of prayers and love, will avail
+                                much and cause the cords of hope that were broken to vibrate once more and rays of the living hope will keep on shining in their Hearts.</p>
+                        </div>
+
+                        <div id="3">
+                            <h4>3. TO VISIT PRISONERS</h4>
+                            <p>Another step that is crucial is to comfort the prisoners, helping them with their basic needs, distributing to them books that will help them to find the real purpose of life and revive back their living hope.</p>
+                        </div>
+
+                        <div id="4">
+                            <h4>4. SUPPORTING ELDERLY PEOPLE </h4>
+                            <p>Many elderly individuals suffer from loneliness, neglect and psychological distress due to their dependence, as the team we have to take serious measures in supporting and influencing the lives of elderly people, both physical,
+                                psychological and spiritual support are needed by this special group, with all ability on our hands we are striving to bring the smile upon the faces of this beloveds. </p>
+                        </div>
+
+                        <div id="5">
+                            <h4>5. VISITING SCHOOLS AND IMPACTING YOUTHS LIFE</h4>
+                            <p>Through motivations, and providing good presentations that will enlights the mind of many youth will bring a great impact upon many students. It will be the seed that will germinate and produce many fruits. Dr Ben Carson once
+                                said
+                                <i class="fa fa-quote-left"></i>
+                                <span class="lead"> Having been born on the wrong side of track does not mean that the birth place has to remain the permanent address, it’s not where we are coming from but where we are going that counts.</span>
+                                <i class="fa fa-quote-right"></i>
+                            </p>
+                        </div>
+
+                        <div id="6">
+                            <h4>6. CONDUCTING HEALTH SEMINORS</h4>
+                            <p>Prevention is better than cure. We will join hands together with other members of health professions to create an education platform on health issues, including nutrition education, preparation of the food, benefits of exercise,
+                                knowledge of several diseases and their natural remedies, many are crying with such diseases which could have been easily prevented but due to lack of sufficient knowledge they found themselves prey for this chronic disease.</p>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- .col-md-8 -->
+                <div class="col-md-4 sidebar ftco-animate">
+
+                    <div class="sidebar-box ftco-animate">
+                        <div class="categories">
+                            <h3>Categories <span>({{portfolio.count}})</span></h3>
+                            <li><a href="{% url 'hope:portfolios' %}" data-filter=".filter-hospital">Hospital <span></span></a></li>
+                            <li><a href="{% url 'hope:portfolios' %}">Prisons <span></span></a></li>
+                            <li><a href="{% url 'hope:portfolios' %}">Orphanage <span></span></a></li>
+                            <li><a href="{% url 'hope:portfolios' %}">Sobber house <span></span></a></li>
+                            <!-- <li><a href="#">Foods <span>(14)</span></a></li>
+                            <li><a href="#">Travel <span>(140)</span></a></li> -->
+                        </div>
+                    </div>
+
+
+                    <!-- <div class="sidebar-box ftco-animate">
+                        <h3>Tag Cloud</h3>
+                        <div class="tagcloud">
+                            <a href="#" class="tag-cloud-link">dish</a>
+                            <a href="#" class="tag-cloud-link">menu</a>
+                            <a href="#" class="tag-cloud-link">food</a>
+                            <a href="#" class="tag-cloud-link">sweet</a>
+                            <a href="#" class="tag-cloud-link">tasty</a>
+                            <a href="#" class="tag-cloud-link">delicious</a>
+                            <a href="#" class="tag-cloud-link">desserts</a>
+                            <a href="#" class="tag-cloud-link">drinks</a>
+                        </div>
+                    </div> -->
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- .section -->
+
+<style></style>
+
+
+{% endblock content %}
