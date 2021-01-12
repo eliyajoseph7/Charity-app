@@ -37,7 +37,9 @@ def portfolio_view(request):
 def about_me(request):
     return render(request, 'hope/pages/aboutMe.html')
     
-
+def activities_view(request):
+    return render(request, 'hope/pages/activitiesPage.html')
+    
 def donation_view(request):
 
     return render(request, 'hope/pages/donation.html')    
